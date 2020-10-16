@@ -1,5 +1,5 @@
 # autontiy-e2e-test-engine-chart
-It setup a mini autonity network with 6 validators and a test engine which applies testcases to the network.
+It setup a mini autonity network with 6 validators and a test engine which applies testcases over the network.
 
 # usage
 ```
