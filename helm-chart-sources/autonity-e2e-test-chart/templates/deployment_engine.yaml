@@ -21,6 +21,8 @@ spec:
       containers:
         - name: e2e-test-engine
           image: {{ $imageE2ETestEngine.repository }}:{{ $imageE2ETestEngine.tag }}
+          command: ["python3"]
+          args: ["e2etestengine.py", "./bin/autonity", "-b", "master"]
           env:
           {{- if $validatorIps }}
           - name: VALIDATOR_IPS
@@ -29,7 +31,3 @@ spec:
           securityContext:
             allowPrivilegeEscalation: true
             privileged: true
-          lifecycle:
-            postStart:
-              exec:
-                command: ["python3", "e2etestengine.py", "./bin/autonity", "-b", "true"]
