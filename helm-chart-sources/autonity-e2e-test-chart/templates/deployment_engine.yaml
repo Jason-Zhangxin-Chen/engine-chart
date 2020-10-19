@@ -24,11 +24,9 @@ spec:
           command: ["python3"]
           args: ["e2etestengine.py", "./bin/autonity", "-b", "master"]
           env:
-          {{- if $validatorAddress }}
           - name: VALIDATOR_IPS
-            value: "{{ range $i, $e := until (atoi (toString .Values.validators.num)) }}{{index $validatorAddress $i }} {{ end }}"
-          {{- end}}
-          
+            value: "{{ range $i, $e := until (atoi (printf "%d" (int64 .Values.validators.num))) }}{{index $validatorAddress $i }} {{ end }}"
+
           securityContext:
             allowPrivilegeEscalation: true
             privileged: true
