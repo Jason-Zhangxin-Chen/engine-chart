@@ -25,8 +25,7 @@ spec:
           args: ["e2etestengine.py", "./bin/autonity", "-b", "master"]
           env:
           - name: VALIDATOR_IPS
-            value: "{{ range $i, $e := until (atoi (printf "%d" (int64 .Values.validators.num))) }}{{index $validatorAddress $i }} {{ end }}"
-
+            value: "{{ .Values.validators.ips }}"
           securityContext:
             allowPrivilegeEscalation: true
             privileged: true
