@@ -6,21 +6,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-{{ $i }}
+  name: validator-{{ $i }}
   namespace: {{ $namespace }}
 spec:
   selector:
     matchLabels:
-      app: client-{{ $i }}
+      app: validator-{{ $i }}
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: client-{{ $i }}
+        app: validator-{{ $i }}
     spec:
       containers:
-        - name: client
+        - name: validator
           image: {{ $imageClientHost.repository }}:{{ $imageClientHost.tag }}
           securityContext:
             allowPrivilegeEscalation: true
