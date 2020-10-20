@@ -12,5 +12,5 @@ validators:
   num: 6
   serviceType: "ClusterIP"
 
-e2e-test-engine:
+e2e_test_engine:
   serviceType: "ClusterIP"
