@@ -1,0 +1,18 @@
+{{- $namespace := .Release.Namespace -}}
+
+{{- $serviceType :=  .Values.e2e_test_engine.serviceType -}}
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: e2e-test-engine
+  namespace: {{ $namespace }}
+spec:
+  type: {{ $serviceType }}
+  ports:
+    - protocol: TCP
+      name: ssh
+      port: 22
+      targetPort: 9222
+  selector:
+    app: e2e-test-engine

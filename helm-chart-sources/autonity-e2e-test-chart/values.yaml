@@ -9,9 +9,8 @@ imageAutonityE2ETestEngine:
 
 # Number of validators
 validators:
-  num: 7
+  num: 6
   serviceType: "ClusterIP"
 
-e2eTestEngine:
-  index: 6
+e2e_test_engine:
   serviceType: "ClusterIP"
