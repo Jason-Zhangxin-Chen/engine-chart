@@ -1,7 +1,7 @@
 ---
 imageClientUbuntuHost:
   repository: ironmanjason/client_host
-  tag: 0.0.1
+  tag: 0.0.2
 
 imageAutonityE2ETestEngine:
   repository: ironmanjason/test_engine
