@@ -22,6 +22,10 @@ spec:
   {{- end }}
   ports:
     - protocol: TCP
+      name: ssh
+      port: 22
+      targetPort: 9022
+    - protocol: TCP
       name: http-rpc
       port: 6000
       targetPort: 6000
