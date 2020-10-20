@@ -11,3 +11,6 @@ imageAutonityE2ETestEngine:
 validators:
   num: 6
   serviceType: "ClusterIP"
+
+e2e-test-engine:
+  serviceType: "ClusterIP"
